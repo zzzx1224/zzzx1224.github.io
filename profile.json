@@ -1,0 +1,35 @@
+{
+  "name": "Zehao Xiao",
+  "tagline": "ML researcher — generalization & test-time adaptation",
+  "accent": "#1565c0",
+  "photo": "authors/admin/zehao.jpeg",
+  "roles": [
+    "<strong>Postdoctoral Researcher, Huawei Noah's Ark Lab, Paris</strong>",
+    "Ph.D., University of Amsterdam (VIS Lab &amp; AIM Lab)"
+  ],
+  "social": {
+    "Google Scholar": "https://scholar.google.com.hk/citations?user=iteDHOsAAAAJ&hl=en",
+    "GitHub": "https://github.com/zzzx1224",
+    "LinkedIn": "https://www.linkedin.com/in/zehao-xiao-9b7264259/",
+    "X": "https://twitter.com/zehao_xiao",
+    "Email": "mailto:zxiao4ai@gmail.com"
+  },
+  "bio": [
+    "I'm currently a postdoctoral researcher at Huawei Noah's Ark Lab in Paris, where I work on pre-training and post-training of time series foundation models. Before that, I completed my Ph.D. in the VIS Lab &amp; AIM Lab at the <a href=\"https://ivi.fnwi.uva.nl/vislab/\">University of Amsterdam</a>, supervised by <a href=\"https://www.ceessnoek.info/\">Cees Snoek</a> and co-supervised by <a href=\"https://scholar.google.ca/citations?user=DnBb3e0AAAAJ&hl=en\">Xiantong Zhen</a>. During my Ph.D. I mainly worked on generalization and test-time adaptation, and I was a member of the <a href=\"https://ellis.eu/projects/out-of-distribution-generalization\">ELLIS</a> society. Before joining UvA in 2020, I received my Master's and Bachelor's degrees from Beihang University.",
+    "My research focuses on domain generalization, test-time adaptation, meta-learning, vision-language models, and multimodal alignment. More recently, I have been working on pre-training and post-training for time series foundation models (TSFM)."
+  ],
+  "news": [
+    {"date": "[May 2026]", "html": "Papers accepted to <strong>ICML 2026</strong>, <strong>Nature Communications</strong>, and <strong>TMLR</strong>."},
+    {"date": "[Jan 2026]", "html": "One paper accepted to <strong>ICLR 2026</strong>."},
+    {"date": "[Jun 2025]", "html": "Successfully defended my thesis <a href=\"https://pure.uva.nl/ws/files/234210275/Thesis.pdf\">Learning to Generalize at Test Time</a>."},
+    {"date": "[May 2025]", "html": "One paper accepted to <strong>ICML 2025</strong>."},
+    {"date": "[Jan 2025]", "html": "One paper accepted to <strong>ICLR 2025</strong>."},
+    {"date": "[Nov 2024]", "html": "Survey <strong>Beyond Model Adaptation at Test Time</strong> released; one paper to <strong>WACV 2025</strong>."},
+    {"date": "[Apr 2024]", "html": "Papers accepted to <strong>NeurIPS 2024</strong> and <strong>CoLLAs 2024</strong>."},
+    {"date": "[Feb 2024]", "html": "One paper accepted to <strong>CVPR 2024</strong>."},
+    {"date": "[2021-2023]", "html": "Papers at <strong>ICLR 2022/2023</strong>, <strong>NeurIPS 2022/2023</strong>, <strong>ICML 2021</strong>."}
+  ],
+  "contact": [
+    "<a href=\"mailto:zxiao4ai@gmail.com\">zxiao4ai@gmail.com</a>"
+  ]
+}

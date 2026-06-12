@@ -1,0 +1,145 @@
+[
+  {
+    "title": "Model Predictive Task Sampling for Efficient and Robust Adaptation",
+    "authors": "C Wang*, Zehao Xiao*, Y Mao*, Y Qu*, Jiayi Shen, Y Lv, X Ji",
+    "venue": "Nature Communications", "year": 2026,
+    "links": {"Paper": "https://arxiv.org/abs/2501.11039"},
+    "image": "publication_zehao/natcomm2026_mpts.png"
+  },
+  {
+    "title": "Towards Uniformity and Alignment for Multimodal Representation Learning",
+    "authors": "Wenzhe Yin, Pan Zhou, Zehao Xiao, Jie Liu, Shujian Yu, Jan-Jakob Sonke, Efstratios Gavves",
+    "venue": "ICML", "year": 2026,
+    "links": {"Paper": "https://arxiv.org/abs/2602.09507"},
+    "image": "publication_zehao/icml2026_uniformity.png"
+  },
+  {
+    "title": "Geometric Neural Process Fields",
+    "authors": "Wenzhe Yin, Zehao Xiao, Jiayi Shen, Yunlu Chen, Cees Snoek, Jan-Jakob Sonke, Efstratios Gavves",
+    "venue": "TMLR", "year": 2026,
+    "links": {"Paper": "https://arxiv.org/abs/2502.02338"},
+    "image": "publication_zehao/gnp.png"
+  },
+  {
+    "title": "Distributional Vision-Language Alignment by Cauchy-Schwarz Divergence",
+    "authors": "Wenzhe Yin*, Zehao Xiao*, Pan Zhou, Shujian Yu, Jiayi Shen, Jan-Jakob Sonke, Efstratios Gavves",
+    "venue": "ICLR", "year": 2026,
+    "links": {"Paper": "https://arxiv.org/abs/2502.17028"},
+    "image": "publication_zehao/cs_align.png"
+  },
+  {
+    "title": "Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes",
+    "authors": "Jie Liu, Pan Zhou, Zehao Xiao, Jiayi Shen, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves",
+    "venue": "ICML", "year": 2025,
+    "links": {"Paper": "https://arxiv.org/abs/2505.01726", "Project": "https://jliu4ai.github.io/NPISeg3D_projectpage/"},
+    "image": "publication_zehao/icml2025_main.png"
+  },
+  {
+    "title": "GeneralizeFormer: Layer-Adaptive Model Generation Across Test-Time Distribution Shifts",
+    "authors": "Sameer Ambekar, Zehao Xiao, Jiayi Shen, Xiantong Zhen, Cees Snoek",
+    "venue": "WACV", "year": 2025,
+    "links": {"Paper": "https://arxiv.org/abs/2502.12195"},
+    "image": "publication_zehao/wacv2025_generalizeformer.png"
+  },
+  {
+    "title": "DynaPrompt: Dynamic Test-Time Prompt Tuning",
+    "authors": "Zehao Xiao, Shilin Yan, Jack Hong, Jiayin Cai, Xiaolong Jiang, Yao Hu, Jiayi Shen, Qi (Cheems) Wang, Cees Snoek",
+    "venue": "ICLR", "year": 2025,
+    "links": {"Paper": "https://openreview.net/forum?id=EFZEdHB3Mp", "Code": "https://github.com/zzzx1224/DynaPrompt"},
+    "image": "publication_zehao/iclr2025_main.png"
+  },
+  {
+    "title": "Beyond Model Adaptation at Test Time: A Survey",
+    "authors": "Zehao Xiao, Cees Snoek",
+    "venue": "Preprint", "year": 2024,
+    "links": {"Paper": "https://arxiv.org/abs/2411.03687", "PaperList": "https://github.com/zzzx1224/Beyond-model-adaptation-at-test-time-Papers"},
+    "image": "publication_zehao/tta_survey.jpg"
+  },
+  {
+    "title": "GO4Align: Group Optimization for Multi-Task Alignment",
+    "authors": "Jiayi Shen, Qi (Cheems) Wang, Zehao Xiao*, Nanne van Noord, Marcel Worring",
+    "contrib": "Corresponding author",
+    "venue": "NeurIPS", "year": 2024,
+    "links": {"Paper": "https://arxiv.org/abs/2404.06486", "Code": "https://github.com/autumn9999/GO4Align"},
+    "image": "publication_zehao/neurips2024_go4align.png"
+  },
+  {
+    "title": "Probabilistic Test-Time Generalization by Variational Neighbor-Labeling",
+    "authors": "Sameer Ambekar*, Zehao Xiao*, Jiayi Shen, Xiantong Zhen, Cees Snoek",
+    "venue": "CoLLAs", "year": 2024,
+    "tldr": "Variational neighbor labels with meta-generalization: pseudo labels as latent variables, meta-learned with variational inference and neighboring information for test-time domain generalization.",
+    "links": {"Paper": "https://arxiv.org/abs/2307.04033"},
+    "image": "publication_zehao/collas2024_variational_labels.png"
+  },
+  {
+    "title": "Any-Shift Prompting for Generalization over Distributions",
+    "authors": "Zehao Xiao, Jiayi Shen, Mohammad Mahdi Derakhshani, Shengcai Liao, Cees Snoek",
+    "venue": "CVPR", "year": 2024,
+    "tldr": "A general probabilistic inference framework that uses both training and test task information for prompt generation, improving generalization across distribution shifts.",
+    "links": {"Paper": "https://arxiv.org/abs/2402.10099", "Code": "https://github.com/zzzx1224/any-shift-prompting"},
+    "image": "publication_zehao/cvpr2024_anyshift.png"
+  },
+  {
+    "title": "ProtoDiff: Learning to Learn Prototypical Networks by Task-Guided Diffusion",
+    "authors": "Yingjun Du, Zehao Xiao, Shengcai Liao, Cees Snoek",
+    "venue": "NeurIPS", "year": 2023,
+    "tldr": "A task-guided diffusion model during meta-training that gradually generates prototypes for efficient class representations.",
+    "links": {"Paper": "https://arxiv.org/abs/2306.14770", "Code": "https://github.com/YDU-uva/ProtoDiff"},
+    "image": "publication_zehao/neurips2023_protodiff.png"
+  },
+  {
+    "title": "Energy-Based Test Sample Adaptation for Domain Generalization",
+    "authors": "Zehao Xiao, Xiantong Zhen, Shengcai Liao, Cees Snoek",
+    "venue": "ICLR", "year": 2023,
+    "tldr": "A discriminative energy-based model that adapts target samples to the source domain distributions for domain generalization.",
+    "links": {"Paper": "https://openreview.net/forum?id=3dnrKbeVatv", "Code": "https://github.com/zzzx1224/EBTSA-ICLR2023"},
+    "image": "publication_zehao/iclr2023_main.png"
+  },
+  {
+    "title": "Association Graph Learning for Multi-Task Classification with Category Shifts",
+    "authors": "Jiayi Shen, Zehao Xiao, Xiantong Zhen, Cees Snoek, Marcel Worring",
+    "venue": "NeurIPS", "year": 2022,
+    "tldr": "A new multi-task learning setting that addresses category shifts from training to test data.",
+    "links": {"Paper": "https://arxiv.org/abs/2210.04637", "Code": "https://github.com/autumn9999/MTC-with-Category-Shifts"},
+    "image": "publication_zehao/neurips2022_main.png"
+  },
+  {
+    "title": "Learning to Generalize across Domains on Single Test Samples",
+    "authors": "Zehao Xiao, Xiantong Zhen, Ling Shao, Cees Snoek",
+    "venue": "ICLR", "year": 2022,
+    "tldr": "A meta-learning paradigm that learns to adapt with single samples at training time, then further adapts to each single test sample at test time.",
+    "links": {"Paper": "https://arxiv.org/abs/2202.08045", "Code": "https://github.com/zzzx1224/SingleSampleGeneralization-ICLR2022"},
+    "image": "publication_zehao/iclr2022_main.png"
+  },
+  {
+    "title": "A Bit More Bayesian: Domain-Invariant Learning with Uncertainty",
+    "authors": "Zehao Xiao*, Jiayi Shen*, Xiantong Zhen, Ling Shao, Cees Snoek",
+    "venue": "ICML", "year": 2021,
+    "tldr": "Introduces weight uncertainty via variational Bayesian inference to better explore domain-invariant learning.",
+    "links": {"Paper": "https://arxiv.org/abs/2105.04030", "Code": "https://github.com/zzzx1224/A-Bit-More-Bayesian"},
+    "image": "publication_zehao/icml2021_main.png"
+  },
+  {
+    "title": "Relational Attention Network for Crowd Counting",
+    "authors": "Anran Zhang, Jiayi Shen, Zehao Xiao, Fan Zhu, Xiantong Zhen, Xianbin Cao, Ling Shao",
+    "venue": "ICCV", "year": 2019,
+    "tldr": "A self-attention mechanism capturing pixel interdependence for crowd counting and density estimation.",
+    "links": {"Paper": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Relational_Attention_Network_for_Crowd_Counting_ICCV_2019_paper.html"},
+    "image": "publication_zehao/iccv2019_main.png"
+  },
+  {
+    "title": "Crowd Counting and Density Estimation by Trellis Encoder-Decoder Networks",
+    "authors": "Xiaolong Jiang*, Zehao Xiao*, Baochang Zhang, Xiantong Zhen, Xianbin Cao, David Doermann, Ling Shao",
+    "venue": "CVPR", "year": 2019,
+    "tldr": "A trellis encoder-decoder network for crowd counting that generates high-quality density maps.",
+    "links": {"Paper": "https://openaccess.thecvf.com/content_CVPR_2019/html/Jiang_Crowd_Counting_and_Density_Estimation_by_Trellis_Encoder-Decoder_Networks_CVPR_2019_paper.html"},
+    "image": "publication_zehao/cvpr2019_main.png"
+  },
+  {
+    "title": "In Defense of Single-column Networks for Crowd Counting",
+    "authors": "Z Wang*, Zehao Xiao*, K Xie, Q Qiu, Xiantong Zhen, Xianbin Cao",
+    "venue": "BMVC", "year": 2018,
+    "links": {"Paper": "https://arxiv.org/abs/1808.06133"},
+    "image": "publication_zehao/bmvc2018_main.png"
+  }
+]
