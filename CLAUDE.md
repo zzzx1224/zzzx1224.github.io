@@ -9,14 +9,15 @@ site — NO Hugo, NO Wowchemy, no toolchain. You (Claude Code) own the loop.
   contact) and `publications.json` (the publication list).
 - `python3 build.py` regenerates `index.html` from those two files. Stdlib only.
 - Existing assets (`authors/`, `publication_zehao/`, `media/`, `css/` leftovers)
-  remain in the repo; images are referenced by absolute URL to this same site,
-  so they keep working. (Switch to relative paths if you ever move the domain.)
+  remain in the repo; images are referenced by **relative** paths (e.g.
+  `publication_zehao/foo.png`), so they work both locally and on the live site.
 
 ## The loop you run
 1. Edit `profile.json` and/or `publications.json`.
 2. `python3 build.py`  -> regenerates `index.html`.
-3. Show the diff. **Get explicit approval before pushing** (this is a public site).
-4. `git add -A && git commit && git push`  -> GitHub Pages serves the update.
+3. `git add -A && git commit && git push`  -> GitHub Pages serves the update.
+4. Show the diff + live link **after** pushing. (Auto-push approved by Zehao,
+   2026-06 — no pre-approval needed; the No-fabrication rule below still applies.)
 
 ## Source-of-truth (anti-drift)
 - `publications.json` is the CANONICAL publication list. It also drives the CV:
@@ -29,10 +30,11 @@ site — NO Hugo, NO Wowchemy, no toolchain. You (Claude Code) own the loop.
 ## Hard guardrails
 - **No fabrication.** Never invent or upgrade publications, venues, dates,
   authors, or claims. Everything here must be true and verifiable.
-- **Public-site safety.** Never push without showing a diff and getting an
-  explicit yes. Work on a branch if making larger changes.
-- **Stale content to fix (flagged in the data files):** current role/affiliation
-  (PhD is completed; add current position), contact address (the UvA one is old).
+- **Public-site safety.** Auto-push is approved (Zehao, 2026-06): push without
+  waiting for pre-approval, but ALWAYS show the diff + live link afterward, and
+  NEVER auto-push fabricated/unverified content (see No fabrication).
+- **Affiliation:** current role is Postdoctoral Researcher, Huawei Noah's Ark
+  Lab, Paris (set 2026-06); contact is email-only (stale UvA address removed).
   Do NOT publish a guessed affiliation — confirm with Zehao first.
 
 ## Conventions
