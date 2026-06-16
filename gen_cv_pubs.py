@@ -84,7 +84,7 @@ def main():
         note_tex = f" ({note})" if note else ""
         out.append(
             f"            \\item {authors}. ``{title},'' {link}{note_tex}\n"
-            f"            \\vspace{{1mm}}"
+            f"            \\vspace{{0.7mm}}"
         )
     print("\n".join(out))
 
