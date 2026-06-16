@@ -19,6 +19,7 @@
     "My research focuses on domain generalization, test-time adaptation, meta-learning, vision-language models, and multimodal alignment. More recently, I have been working on pre-training and post-training for time series foundation models (TSFM)."
   ],
   "news": [
+    {"date": "[Jun 2026]", "html": "Oral paper accepted to the <strong>ICML 2026 Workshop on Foundation Models for Structured Data</strong>."},
     {"date": "[May 2026]", "html": "Papers accepted to <strong>ICML 2026</strong>, <strong>Nature Communications</strong>, and <strong>TMLR</strong>."},
     {"date": "[Jan 2026]", "html": "One paper accepted to <strong>ICLR 2026</strong>."},
     {"date": "[Jun 2025]", "html": "Successfully defended my thesis <a href=\"https://pure.uva.nl/ws/files/234210275/Thesis.pdf\">Learning to Generalize at Test Time</a>."},

@@ -1,5 +1,11 @@
 [
   {
+    "title": "Latent Instructions as Context Surrogates: Enhancing Frozen Time Series Forecasters with Instance-Adaptive Prompts",
+    "authors": "Zehao Xiao, Shifeng Xie, Lei Zan, Malik Tiomoko, Jianfeng Zhang, Lujia Pan, Keli Zhang, Ievgen Redko",
+    "venue": "2nd ICML Workshop on Foundation Models for Structured Data (Oral)", "year": 2026,
+    "links": {"Paper": "https://openreview.net/forum?id=YCedi8zejy"}
+  },
+  {
     "title": "Model Predictive Task Sampling for Efficient and Robust Adaptation",
     "authors": "C Wang*, Zehao Xiao*, Y Mao*, Y Qu*, Jiayi Shen, Y Lv, X Ji",
     "venue": "Nature Communications", "year": 2026,
