@@ -1,6 +1,6 @@
 {
   "name": "Zehao Xiao",
-  "tagline": "ML researcher — generalization & test-time adaptation",
+  "tagline": "ML researcher — test-time adaptation & generalization of foundation models",
   "accent": "#1565c0",
   "photo": "authors/admin/zehao.jpeg",
   "roles": [
@@ -16,7 +16,7 @@
   },
   "bio": [
     "I'm currently a postdoctoral researcher at Huawei Noah's Ark Lab in Paris, where I work on pre-training and post-training of time series foundation models. Before that, I completed my Ph.D. in the VIS Lab &amp; AIM Lab at the <a href=\"https://ivi.fnwi.uva.nl/vislab/\">University of Amsterdam</a>, supervised by <a href=\"https://www.ceessnoek.info/\">Cees Snoek</a> and co-supervised by <a href=\"https://scholar.google.ca/citations?user=DnBb3e0AAAAJ&hl=en\">Xiantong Zhen</a>. During my Ph.D. I mainly worked on generalization and test-time adaptation, and I was a member of the <a href=\"https://ellis.eu/projects/out-of-distribution-generalization\">ELLIS</a> society. Before joining UvA in 2020, I received my Master's and Bachelor's degrees from Beihang University.",
-    "My research focuses on domain generalization, test-time adaptation, meta-learning, vision-language models, and multimodal alignment. More recently, I have been working on pre-training and post-training for time series foundation models (TSFM)."
+    "My research centers on one question: how should pretrained models keep adapting after pretraining — at test time, under distribution shift, without labels or retraining? This through-line runs from domain generalization and test-time adaptation, through meta-learning and probabilistic, energy-based methods, to prompt-based adaptation of vision-language models and multimodal alignment. Most recently, I apply it to pre-training and post-training of time series foundation models (TSFM), steering frozen forecasters with in-context learning and test-time optimization."
   ],
   "news": [
     {"date": "[Jun 2026]", "html": "Oral paper accepted to the <strong>ICML 2026 Workshop on Foundation Models for Structured Data</strong>."},
