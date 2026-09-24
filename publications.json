@@ -1,5 +1,11 @@
 [
   {
+    "title": "Tabby: An Open Pretraining Recipe for Time Series Foundation Models",
+    "authors": "Shifeng Xie, Bahaeddine Abdessalem, Zehao Xiao, Youssef Attia El Hili, Ambroise Odonnat, Zhiwei Dong, Lei Zan, Themis Palpanas, Jianfeng Zhang, Lujia Pan, Keli Zhang, Malik Tiomoko",
+    "venue": "Preprint (Technical Report)", "year": 2026,
+    "links": {"Paper": "https://arxiv.org/abs/2609.13956", "Code": "https://github.com/huawei-noah/trustworthyAI"}
+  },
+  {
     "title": "Latent Instructions as Context Surrogates: Enhancing Frozen Time Series Forecasters with Instance-Adaptive Prompts",
     "authors": "Zehao Xiao, Shifeng Xie, Lei Zan, Malik Tiomoko, Jianfeng Zhang, Lujia Pan, Keli Zhang, Ievgen Redko",
     "venue": "2nd ICML Workshop on Foundation Models for Structured Data (Oral)", "year": 2026,
@@ -32,12 +38,6 @@
     "venue": "ICLR", "year": 2026,
     "links": {"Paper": "https://arxiv.org/abs/2502.17028"},
     "image": "publication_zehao/cs_align.png"
-  },
-  {
-    "title": "Tabby: An Open Pretraining Recipe for Time Series Foundation Models",
-    "authors": "Shifeng Xie, Bahaeddine Abdessalem, Zehao Xiao, Youssef Attia El Hili, Ambroise Odonnat, Zhiwei Dong, Lei Zan, Themis Palpanas, Jianfeng Zhang, Lujia Pan, Keli Zhang, Malik Tiomoko",
-    "venue": "Preprint (Technical Report)", "year": 2026,
-    "links": {"Paper": "https://arxiv.org/abs/2609.13956", "Code": "https://github.com/huawei-noah/trustworthyAI"}
   },
   {
     "title": "Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes",
