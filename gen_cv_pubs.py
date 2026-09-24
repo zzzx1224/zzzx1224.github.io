@@ -73,6 +73,8 @@ def render_authors(authors):
 
 
 def contrib_note(p):
+    if p.get("cv_contrib"):
+        return p["cv_contrib"]
     if p.get("contrib"):
         return p["contrib"]
     if p.get("authors", "").count("*") >= 2:
@@ -83,8 +85,25 @@ def contrib_note(p):
 def main():
     with open(os.path.join(HERE, "publications.json"), encoding="utf-8") as f:
         pubs = json.load(f)
+    # Keep the homepage order in publications.json; group the generated CV by
+    # authorship. Listed-first and equal-first work leads, then Tabby, then the
+    # remaining co-authored publications. Python's sort preserves source order
+    # inside each group.
+    def cv_rank(p):
+        names = [name.strip() for name in p.get("authors", "").split(",")]
+        if names and names[0].rstrip("*").strip() == ME:
+            return 0
+        # GO4Align uses a star for corresponding authorship, not equal-first.
+        if p.get("contrib") != "Corresponding author" and any(
+            name.endswith("*") and name.rstrip("*").strip() == ME for name in names
+        ):
+            return 1
+        if p["title"].startswith("Tabby: An Open Pretraining Recipe"):
+            return 2
+        return 3
+
     out = []
-    for p in pubs:
+    for p in sorted(pubs, key=cv_rank):
         authors = render_authors(p.get("authors", ""))
         title = tex_escape(p["title"])
         venue = tex_escape(p.get("venue", ""))
@@ -99,7 +118,7 @@ def main():
         note_tex = f" ({note})" if note else ""
         out.append(
             f"            \\item {authors}. ``{title},'' {link}{note_tex}\n"
-            f"            \\vspace{{0.7mm}}"
+            f"            \\vspace{{0.3mm}}"
         )
     print("\n".join(out))
 

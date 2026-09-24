@@ -3,6 +3,7 @@
     "title": "Tabby: An Open Pretraining Recipe for Time Series Foundation Models",
     "authors": "Shifeng Xie, Bahaeddine Abdessalem, Zehao Xiao, Youssef Attia El Hili, Ambroise Odonnat, Zhiwei Dong, Lei Zan, Themis Palpanas, Jianfeng Zhang, Lujia Pan, Keli Zhang, Malik Tiomoko",
     "venue": "Preprint (Technical Report)", "year": 2026,
+    "cv_contrib": "Core research contributor",
     "links": {"Paper": "https://arxiv.org/abs/2609.13956", "Code": "https://github.com/huawei-noah/trustworthyAI"}
   },
   {
