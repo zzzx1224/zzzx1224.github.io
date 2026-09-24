@@ -34,6 +34,12 @@
     "image": "publication_zehao/cs_align.png"
   },
   {
+    "title": "Tabby: An Open Pretraining Recipe for Time Series Foundation Models",
+    "authors": "Shifeng Xie, Bahaeddine Abdessalem, Zehao Xiao, Youssef Attia El Hili, Ambroise Odonnat, Zhiwei Dong, Lei Zan, Themis Palpanas, Jianfeng Zhang, Lujia Pan, Keli Zhang, Malik Tiomoko",
+    "venue": "Preprint (Technical Report)", "year": 2026,
+    "links": {"Paper": "https://arxiv.org/abs/2609.13956", "Code": "https://github.com/huawei-noah/trustworthyAI"}
+  },
+  {
     "title": "Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes",
     "authors": "Jie Liu, Pan Zhou, Zehao Xiao, Jiayi Shen, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves",
     "venue": "ICML", "year": 2025,

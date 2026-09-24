@@ -32,15 +32,30 @@ def tex_escape(s):
     return s.replace("&", r"\&").replace("%", r"\%").replace("_", r"\_")
 
 
+# 复合姓(无小写连词,无法用规则判断)的显式覆盖:全名 -> 姓氏部分
+COMPOUND_SURNAMES = {
+    "Youssef Attia El Hili": "Attia El Hili",
+    "Y Attia El Hili": "Attia El Hili",
+}
+# 姓氏连词:出现即视为姓氏起点(van Noord / de Bruin / von Neumann ...)
+PARTICLES = {"van", "von", "de", "den", "der", "di", "da", "del", "la", "le", "dos", "bin"}
+
+
 def abbrev(name):
-    """'Wenzhe Yin*' -> 'W Yin*'; already-short 'C Wang' -> 'C Wang'."""
+    """'Wenzhe Yin*' -> 'W Yin*'; 'Nanne van Noord' -> 'N van Noord';
+    'Mohammad Mahdi Derakhshani' -> 'M Derakhshani' (中间名丢弃)."""
     name = name.strip()
     star = ""
     if name.endswith("*"):
         star, name = "*", name[:-1].strip()
+    if name in COMPOUND_SURNAMES:
+        return f"{name.split()[0][0].upper()} {COMPOUND_SURNAMES[name]}{star}"
     toks = name.split()
     if len(toks) <= 1:
         return name + star
+    for i, t in enumerate(toks[1:], start=1):
+        if t.lower() in PARTICLES:
+            return f"{toks[0][0].upper()} {' '.join(toks[i:])}{star}"
     return f"{toks[0][0].upper()} {toks[-1]}{star}"
 
 
