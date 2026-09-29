@@ -26,6 +26,17 @@
     "cover": "publication_zehao/covers/tabby-an-open-pretraining-recipe-for-time-series-foundation-mode.png"
   },
   {
+    "title": "Adaptive Latent Decomposition for Domain Generalization in Time Series Forecasting",
+    "authors": "Songgaojun Deng, Zehao Xiao, Maarten de Rijke",
+    "venue": "ACM Transactions on Knowledge Discovery from Data",
+    "year": 2026,
+    "links": {
+      "Paper": "https://dl.acm.org/doi/full/10.1145/3819822",
+      "Code": "https://github.com/songgaojundeng/TSDG-ALD"
+    },
+    "cover": "publication_zehao/covers/adaptive-latent-decomposition-for-domain-generalization-in-time-series-forecasting.png"
+  },
+  {
     "title": "Model Predictive Task Sampling for Efficient and Robust Adaptation",
     "authors": "C Wang*, Zehao Xiao*, Y Mao*, Y Qu*, Jiayi Shen, Y Lv, X Ji",
     "venue": "Nature Communications",
