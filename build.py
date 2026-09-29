@@ -38,8 +38,9 @@ def render_links(links):
 
 def render_pub(p):
     img = p.get("image")
+    thumb_class = "pub-thumb pub-thumb--diagram" if img in {"publication_zehao/pacts.png", "publication_zehao/tabby.png"} else "pub-thumb"
     thumb = (
-        f'<div class="pub-thumb"><img loading="lazy" src="{html.escape(img)}" alt=""></div>'
+        f'<div class="{thumb_class}"><img loading="lazy" src="{html.escape(img)}" alt=""></div>'
         if img else '<div class="pub-thumb pub-thumb--empty"></div>'
     )
     title = html.escape(p["title"])
@@ -119,6 +120,7 @@ section h2 {{ font-size:1.35rem; margin:0 0 1.1rem; color:var(--ink);
 .pub:first-of-type {{ border-top:none; }}
 .pub-thumb {{ flex:0 0 150px; }}
 .pub-thumb img {{ width:150px; height:96px; object-fit:cover; border-radius:6px; border:1px solid var(--line); }}
+.pub-thumb--diagram img {{ object-fit:contain; background:#fff; }}
 .pub-thumb--empty {{ width:150px; height:96px; border:1px dashed var(--line); border-radius:6px; }}
 .pub-title {{ margin:0 0 .25rem; font-size:1.04rem; }}
 .pub-authors {{ margin:.1rem 0; font-size:.92rem; color:var(--ink); }}
