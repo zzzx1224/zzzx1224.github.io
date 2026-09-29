@@ -9,7 +9,8 @@
       "Workshop version": "https://openreview.net/forum?id=YCedi8zejy"
     },
     "cv_contrib": "Earlier version: ICML 2026 FMSD Workshop Oral",
-    "image": "publication_zehao/pacts.png"
+    "image": "publication_zehao/pacts.png",
+    "cover": "publication_zehao/covers/instance-adaptive-prompts-as-context-for-time-series-foundation.png"
   },
   {
     "title": "Tabby: An Open Pretraining Recipe for Time Series Foundation Models",
@@ -21,7 +22,8 @@
       "Paper": "https://arxiv.org/abs/2609.13956",
       "Code": "https://github.com/huawei-noah/trustworthyAI"
     },
-    "image": "publication_zehao/tabby.png"
+    "image": "publication_zehao/tabby.png",
+    "cover": "publication_zehao/covers/tabby-an-open-pretraining-recipe-for-time-series-foundation-mode.png"
   },
   {
     "title": "Model Predictive Task Sampling for Efficient and Robust Adaptation",
@@ -31,7 +33,8 @@
     "links": {
       "Paper": "https://arxiv.org/abs/2501.11039"
     },
-    "image": "publication_zehao/natcomm2026_mpts.png"
+    "image": "publication_zehao/natcomm2026_mpts.png",
+    "cover": "publication_zehao/covers/model-predictive-task-sampling-for-efficient-and-robust-adaptati.png"
   },
   {
     "title": "Towards Uniformity and Alignment for Multimodal Representation Learning",
@@ -41,7 +44,8 @@
     "links": {
       "Paper": "https://arxiv.org/abs/2602.09507"
     },
-    "image": "publication_zehao/icml2026_uniformity.png"
+    "image": "publication_zehao/icml2026_uniformity.png",
+    "cover": "publication_zehao/covers/towards-uniformity-and-alignment-for-multimodal-representation-l.png"
   },
   {
     "title": "Geometric Neural Process Fields",
@@ -51,7 +55,8 @@
     "links": {
       "Paper": "https://arxiv.org/abs/2502.02338"
     },
-    "image": "publication_zehao/gnp.png"
+    "image": "publication_zehao/gnp.png",
+    "cover": "publication_zehao/covers/geometric-neural-process-fields.png"
   },
   {
     "title": "Distributional Vision-Language Alignment by Cauchy-Schwarz Divergence",
@@ -61,7 +66,8 @@
     "links": {
       "Paper": "https://arxiv.org/abs/2502.17028"
     },
-    "image": "publication_zehao/cs_align.png"
+    "image": "publication_zehao/cs_align.png",
+    "cover": "publication_zehao/covers/distributional-vision-language-alignment-by-cauchy-schwarz-diver.png"
   },
   {
     "title": "Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes",
@@ -72,7 +78,8 @@
       "Paper": "https://arxiv.org/abs/2505.01726",
       "Project": "https://jliu4ai.github.io/NPISeg3D_projectpage/"
     },
-    "image": "publication_zehao/icml2025_main.png"
+    "image": "publication_zehao/icml2025_main.png",
+    "cover": "publication_zehao/covers/probabilistic-interactive-3d-segmentation-with-hierarchical-neur.png"
   },
   {
     "title": "GeneralizeFormer: Layer-Adaptive Model Generation Across Test-Time Distribution Shifts",
@@ -82,7 +89,8 @@
     "links": {
       "Paper": "https://arxiv.org/abs/2502.12195"
     },
-    "image": "publication_zehao/wacv2025_generalizeformer.png"
+    "image": "publication_zehao/wacv2025_generalizeformer.png",
+    "cover": "publication_zehao/covers/generalizeformer-layer-adaptive-model-generation-across-test-tim.png"
   },
   {
     "title": "DynaPrompt: Dynamic Test-Time Prompt Tuning",
@@ -93,7 +101,8 @@
       "Paper": "https://openreview.net/forum?id=EFZEdHB3Mp",
       "Code": "https://github.com/zzzx1224/DynaPrompt"
     },
-    "image": "publication_zehao/iclr2025_main.png"
+    "image": "publication_zehao/iclr2025_main.png",
+    "cover": "publication_zehao/covers/dynaprompt.png"
   },
   {
     "title": "Beyond Model Adaptation at Test Time: A Survey",
@@ -104,7 +113,8 @@
       "Paper": "https://arxiv.org/abs/2411.03687",
       "PaperList": "https://github.com/zzzx1224/Beyond-model-adaptation-at-test-time-Papers"
     },
-    "image": "publication_zehao/tta_survey.jpg"
+    "image": "publication_zehao/tta_survey.jpg",
+    "cover": "publication_zehao/covers/beyond-model-adaptation-at-test-time-a-survey.png"
   },
   {
     "title": "GO4Align: Group Optimization for Multi-Task Alignment",
@@ -116,7 +126,8 @@
       "Paper": "https://arxiv.org/abs/2404.06486",
       "Code": "https://github.com/autumn9999/GO4Align"
     },
-    "image": "publication_zehao/neurips2024_go4align.png"
+    "image": "publication_zehao/neurips2024_go4align.png",
+    "cover": "publication_zehao/covers/go4align-group-optimization-for-multi-task-alignment.png"
   },
   {
     "title": "Probabilistic Test-Time Generalization by Variational Neighbor-Labeling",
@@ -127,7 +138,8 @@
     "links": {
       "Paper": "https://arxiv.org/abs/2307.04033"
     },
-    "image": "publication_zehao/collas2024_variational_labels.png"
+    "image": "publication_zehao/collas2024_variational_labels.png",
+    "cover": "publication_zehao/covers/probabilistic-test-time-generalization-by-variational-neighbor-l.png"
   },
   {
     "title": "Any-Shift Prompting for Generalization over Distributions",
@@ -139,7 +151,8 @@
       "Paper": "https://arxiv.org/abs/2402.10099",
       "Code": "https://github.com/zzzx1224/any-shift-prompting"
     },
-    "image": "publication_zehao/cvpr2024_anyshift.png"
+    "image": "publication_zehao/cvpr2024_anyshift.png",
+    "cover": "publication_zehao/covers/any-shift-prompting-for-generalization-over-distributions.png"
   },
   {
     "title": "ProtoDiff: Learning to Learn Prototypical Networks by Task-Guided Diffusion",
@@ -151,7 +164,8 @@
       "Paper": "https://arxiv.org/abs/2306.14770",
       "Code": "https://github.com/YDU-uva/ProtoDiff"
     },
-    "image": "publication_zehao/neurips2023_protodiff.png"
+    "image": "publication_zehao/neurips2023_protodiff.png",
+    "cover": "publication_zehao/covers/protodiff-learning-to-learn-prototypical-networks-by-task-guided.png"
   },
   {
     "title": "Energy-Based Test Sample Adaptation for Domain Generalization",
@@ -163,7 +177,8 @@
       "Paper": "https://openreview.net/forum?id=3dnrKbeVatv",
       "Code": "https://github.com/zzzx1224/EBTSA-ICLR2023"
     },
-    "image": "publication_zehao/iclr2023_main.png"
+    "image": "publication_zehao/iclr2023_main.png",
+    "cover": "publication_zehao/covers/energy-based.png"
   },
   {
     "title": "Association Graph Learning for Multi-Task Classification with Category Shifts",
@@ -175,7 +190,8 @@
       "Paper": "https://arxiv.org/abs/2210.04637",
       "Code": "https://github.com/autumn9999/MTC-with-Category-Shifts"
     },
-    "image": "publication_zehao/neurips2022_main.png"
+    "image": "publication_zehao/neurips2022_main.png",
+    "cover": "publication_zehao/covers/association-graph-learning-for-multi-task-classification-with-ca.png"
   },
   {
     "title": "Learning to Generalize across Domains on Single Test Samples",
@@ -187,7 +203,8 @@
       "Paper": "https://arxiv.org/abs/2202.08045",
       "Code": "https://github.com/zzzx1224/SingleSampleGeneralization-ICLR2022"
     },
-    "image": "publication_zehao/iclr2022_main.png"
+    "image": "publication_zehao/iclr2022_main.png",
+    "cover": "publication_zehao/covers/learning-to-generalize-across-domains-on-single-test-samples.png"
   },
   {
     "title": "A Bit More Bayesian: Domain-Invariant Learning with Uncertainty",
@@ -199,7 +216,8 @@
       "Paper": "https://arxiv.org/abs/2105.04030",
       "Code": "https://github.com/zzzx1224/A-Bit-More-Bayesian"
     },
-    "image": "publication_zehao/icml2021_main.png"
+    "image": "publication_zehao/icml2021_main.png",
+    "cover": "publication_zehao/covers/a-bit-more-bayesian-domain-invariant-learning-with-uncertainty.png"
   },
   {
     "title": "Relational Attention Network for Crowd Counting",
@@ -210,7 +228,8 @@
     "links": {
       "Paper": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Relational_Attention_Network_for_Crowd_Counting_ICCV_2019_paper.html"
     },
-    "image": "publication_zehao/iccv2019_main.png"
+    "image": "publication_zehao/iccv2019_main.png",
+    "cover": "publication_zehao/covers/relational-attention-network-for-crowd-counting.png"
   },
   {
     "title": "Crowd Counting and Density Estimation by Trellis Encoder-Decoder Networks",
@@ -221,7 +240,8 @@
     "links": {
       "Paper": "https://openaccess.thecvf.com/content_CVPR_2019/html/Jiang_Crowd_Counting_and_Density_Estimation_by_Trellis_Encoder-Decoder_Networks_CVPR_2019_paper.html"
     },
-    "image": "publication_zehao/cvpr2019_main.png"
+    "image": "publication_zehao/cvpr2019_main.png",
+    "cover": "publication_zehao/covers/crowd-counting-and-density-estimation-by-trellis-encoder-decoder.png"
   },
   {
     "title": "In Defense of Single-column Networks for Crowd Counting",
@@ -231,6 +251,7 @@
     "links": {
       "Paper": "https://arxiv.org/abs/1808.06133"
     },
-    "image": "publication_zehao/bmvc2018_main.png"
+    "image": "publication_zehao/bmvc2018_main.png",
+    "cover": "publication_zehao/covers/in-defense-of-single-column-networks-for-crowd-counting.png"
   }
 ]

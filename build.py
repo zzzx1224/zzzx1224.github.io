@@ -43,11 +43,11 @@ def render_pub(p):
         f'<a href="{html.escape(paper_url, quote=True)}" target="_blank" rel="noopener">{title}</a>'
         if paper_url else title
     )
-    image = p.get("image")
+    image = p.get("cover") or p.get("image")
     if image:
         image_html = (
             f'<img loading="lazy" src="{html.escape(image, quote=True)}" '
-            f'alt="Figure for {title}">'
+            f'alt="First page of {title}">'
         )
         if paper_url:
             image_html = (
@@ -59,6 +59,7 @@ def render_pub(p):
     venue = html.escape(p.get("venue", ""))
     authors = bold_me(html.escape(p.get("authors", "")))
     links = render_links(p.get("links", {}))
+    tldr = f'<p class="pub-tldr">{html.escape(p["tldr"])}</p>' if p.get("tldr") else ""
     return f"""      <article class="pub">
         <div class="pub-side">
           <div class="pub-venue">{venue}</div>
@@ -67,6 +68,7 @@ def render_pub(p):
         <div class="pub-body">
           <h4 class="pub-title">{title_html}</h4>
           <p class="pub-authors">{authors}</p>
+          {tldr}
           {links}
         </div>
       </article>"""
@@ -137,36 +139,33 @@ section h2 {{ font-size:1.35rem; margin:0 0 1.1rem; color:var(--ink);
 .news {{ list-style:none; padding:0; margin:0; }}
 .news li {{ padding:.28rem 0; color:var(--ink); }}
 .news-date {{ display:inline-block; min-width:7.5rem; color:var(--muted); font-size:.88rem; }}
-#publications {{ font-family:Georgia,"Times New Roman",serif; }}
-#publications > h2 {{ border:0; padding:0; font-size:2rem; line-height:1.2; letter-spacing:-.02em; }}
-.pub-intro {{ max-width:42rem; margin:.9rem 0 2.2rem 176px; color:#4b5563; font-size:1rem; line-height:1.55; }}
-.pub-year-group {{ margin:0 0 2.3rem; }}
-.pub-year {{ color:#740082; font-size:1.45rem; font-weight:500; margin:0 0 .8rem; }}
-.pub {{ display:grid; grid-template-columns:150px minmax(0,1fr); gap:1.6rem; margin:0 0 2rem; align-items:start; }}
-.pub-side {{ min-width:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }}
-.pub-venue {{ font-size:.78rem; font-weight:600; color:#20253b; line-height:1.35; margin:.1rem 0 .6rem; }}
-.pub-image-link {{ display:block; width:140px; }}
-.pub-side img {{ display:block; width:140px; height:110px; object-fit:contain; background:#fff; border:1px solid #e1dfeb; border-radius:3px; box-shadow:0 3px 9px rgba(31,41,55,.09); }}
+.pub-intro {{ max-width:42rem; margin:0 0 1.8rem; color:var(--muted); font-size:.95rem; }}
+.pub-year-group {{ margin:0 0 2rem; }}
+.pub-year {{ color:var(--accent); font-size:1.2rem; font-weight:600; margin:0 0 .7rem; }}
+.pub {{ display:grid; grid-template-columns:150px minmax(0,1fr); gap:1.1rem; margin:0 0 1.7rem; align-items:start; }}
+.pub-side {{ min-width:0; }}
+.pub-venue {{ font-size:.9rem; color:var(--muted); margin:0 0 .45rem; }}
+.pub-image-link {{ display:block; width:136px; }}
+.pub-side img {{ display:block; width:136px; height:176px; object-fit:cover; background:#fff; border:1px solid var(--line); border-radius:6px; }}
 .pub-body {{ min-width:0; }}
-.pub-title {{ margin:0 0 .25rem; font-size:1.08rem; line-height:1.35; }}
-.pub-title a {{ color:#1d1830; }}
-.pub-title a:hover {{ color:#740082; }}
-.pub-authors {{ margin:.15rem 0 .25rem; color:#606071; font-size:.94rem; line-height:1.45; }}
-.pub-authors strong {{ color:#222039; }}
-.pub-links {{ display:flex; gap:1rem; flex-wrap:wrap; font-size:.87rem; }}
-.pub-links .btn {{ color:#740082; text-decoration:underline; text-underline-offset:2px; }}
-.pub-links .btn:hover {{ color:#4c0057; }}
+.pub-title {{ margin:0 0 .25rem; font-size:1.04rem; }}
+.pub-authors {{ margin:.1rem 0; font-size:.92rem; color:var(--ink); }}
+.pub-tldr {{ margin:.45rem 0 .2rem; font-size:.9rem; color:var(--muted); }}
+.pub-links {{ margin-top:.5rem; display:flex; gap:.45rem; flex-wrap:wrap; }}
+.pub-links .btn {{ font-size:.8rem; padding:.18rem .55rem; border:1px solid var(--accent); border-radius:5px; color:var(--accent); }}
+.pub-links .btn:hover {{ background:var(--accent); color:#fff; text-decoration:none; }}
 .contact {{ list-style:none; padding:0; margin:0; color:var(--muted); }}
 footer {{ text-align:center; color:var(--muted); font-size:.82rem; padding:1.6rem 0; }}
 @media (max-width:560px) {{
-  .pub-intro {{ margin-left:0; }}
-  .pub {{ grid-template-columns:92px minmax(0,1fr); gap:1rem; margin-bottom:1.8rem; }}
+  .pub {{ grid-template-columns:92px minmax(0,1fr); gap:.9rem; }}
   .pub-side img,.pub-image-link {{ width:92px; }}
-  .pub-side img {{ height:82px; }}
-  .pub-title {{ font-size:1rem; }}
-  .pub-authors {{ font-size:.87rem; }}
+  .pub-side img {{ height:119px; }}
 }}
-@media (max-width:360px) {{ .pub {{ grid-template-columns:1fr; }} .pub-side img,.pub-image-link {{ width:140px; }} }}
+@media (max-width:360px) {{
+  .pub {{ grid-template-columns:1fr; }}
+  .pub-side img,.pub-image-link {{ width:136px; }}
+  .pub-side img {{ height:176px; }}
+}}
 </style>
 </head>
 <body>
@@ -222,6 +221,7 @@ def main():
         pubs=render_publications(pubs, prof.get("social", {}).get("Google Scholar", "")),
         contact=contact,
     )
+    out = "\n".join(line.rstrip() for line in out.split("\n"))
     with open(os.path.join(HERE, "index.html"), "w", encoding="utf-8") as f:
         f.write(out)
     print(f"Wrote index.html ({len(out)} bytes, {len(pubs)} publications)")
