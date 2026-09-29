@@ -37,34 +37,55 @@ def render_links(links):
 
 
 def render_pub(p):
-    img = p.get("image")
-    thumb_class = "pub-thumb pub-thumb--diagram" if img in {"publication_zehao/pacts.png", "publication_zehao/tabby.png"} else "pub-thumb"
-    thumb = (
-        f'<div class="{thumb_class}"><img loading="lazy" src="{html.escape(img)}" alt=""></div>'
-        if img else '<div class="pub-thumb pub-thumb--empty"></div>'
-    )
     title = html.escape(p["title"])
     paper_url = p.get("links", {}).get("Paper")
     title_html = (
-        f'<a href="{html.escape(paper_url)}" target="_blank" rel="noopener">{title}</a>'
+        f'<a href="{html.escape(paper_url, quote=True)}" target="_blank" rel="noopener">{title}</a>'
         if paper_url else title
     )
+    image = p.get("image")
+    if image:
+        image_html = (
+            f'<img loading="lazy" src="{html.escape(image, quote=True)}" '
+            f'alt="Figure for {title}">'
+        )
+        if paper_url:
+            image_html = (
+                f'<a class="pub-image-link" href="{html.escape(paper_url, quote=True)}" '
+                f'target="_blank" rel="noopener">{image_html}</a>'
+            )
+    else:
+        image_html = ""
     venue = html.escape(p.get("venue", ""))
-    year = html.escape(str(p.get("year", "")))
-    venue_html = f'<span class="pub-venue"><em>{venue}</em>{", " + year if year else ""}</span>' if venue else ""
-    authors = bold_me(p.get("authors", ""))
-    tldr = f'<p class="pub-tldr">{html.escape(p["tldr"])}</p>' if p.get("tldr") else ""
+    authors = bold_me(html.escape(p.get("authors", "")))
     links = render_links(p.get("links", {}))
-    return f"""    <article class="pub">
-      {thumb}
-      <div class="pub-body">
-        <h3 class="pub-title">{title_html}</h3>
-        <p class="pub-authors">{authors}</p>
-        {venue_html}
-        {tldr}
-        {links}
-      </div>
-    </article>"""
+    return f"""      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">{venue}</div>
+          {image_html}
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title">{title_html}</h4>
+          <p class="pub-authors">{authors}</p>
+          {links}
+        </div>
+      </article>"""
+
+
+def render_publications(pubs, scholar_url):
+    groups = {}
+    for pub in pubs:
+        groups.setdefault(pub["year"], []).append(pub)
+    scholar = html.escape(scholar_url, quote=True)
+    intro = (
+        '<p class="pub-intro">Selected publications. For the full list, see my '
+        f'<a href="{scholar}" target="_blank" rel="noopener">Google Scholar profile</a>.</p>'
+    )
+    years = []
+    for year in sorted(groups, reverse=True):
+        rows = "\n".join(render_pub(pub) for pub in groups[year])
+        years.append(f'    <div class="pub-year-group">\n      <h3 class="pub-year">{year}</h3>\n{rows}\n    </div>')
+    return intro + "\n" + "\n".join(years)
 
 
 def render_social(links):
@@ -116,22 +137,36 @@ section h2 {{ font-size:1.35rem; margin:0 0 1.1rem; color:var(--ink);
 .news {{ list-style:none; padding:0; margin:0; }}
 .news li {{ padding:.28rem 0; color:var(--ink); }}
 .news-date {{ display:inline-block; min-width:7.5rem; color:var(--muted); font-size:.88rem; }}
-.pub {{ display:flex; gap:1.1rem; padding:1.1rem 0; border-top:1px solid var(--line); }}
-.pub:first-of-type {{ border-top:none; }}
-.pub-thumb {{ flex:0 0 150px; }}
-.pub-thumb img {{ width:150px; height:96px; object-fit:cover; border-radius:6px; border:1px solid var(--line); }}
-.pub-thumb--diagram img {{ object-fit:contain; background:#fff; }}
-.pub-thumb--empty {{ width:150px; height:96px; border:1px dashed var(--line); border-radius:6px; }}
-.pub-title {{ margin:0 0 .25rem; font-size:1.04rem; }}
-.pub-authors {{ margin:.1rem 0; font-size:.92rem; color:var(--ink); }}
-.pub-venue {{ font-size:.9rem; color:var(--muted); }}
-.pub-tldr {{ margin:.45rem 0 .2rem; font-size:.9rem; color:var(--muted); }}
-.pub-links {{ margin-top:.5rem; display:flex; gap:.45rem; flex-wrap:wrap; }}
-.btn {{ font-size:.8rem; padding:.18rem .55rem; border:1px solid var(--accent); border-radius:5px; color:var(--accent); }}
-.btn:hover {{ background:var(--accent); color:#fff; text-decoration:none; }}
+#publications {{ font-family:Georgia,"Times New Roman",serif; }}
+#publications > h2 {{ border:0; padding:0; font-size:2rem; line-height:1.2; letter-spacing:-.02em; }}
+.pub-intro {{ max-width:42rem; margin:.9rem 0 2.2rem 176px; color:#4b5563; font-size:1rem; line-height:1.55; }}
+.pub-year-group {{ margin:0 0 2.3rem; }}
+.pub-year {{ color:#740082; font-size:1.45rem; font-weight:500; margin:0 0 .8rem; }}
+.pub {{ display:grid; grid-template-columns:150px minmax(0,1fr); gap:1.6rem; margin:0 0 2rem; align-items:start; }}
+.pub-side {{ min-width:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }}
+.pub-venue {{ font-size:.78rem; font-weight:600; color:#20253b; line-height:1.35; margin:.1rem 0 .6rem; }}
+.pub-image-link {{ display:block; width:140px; }}
+.pub-side img {{ display:block; width:140px; height:110px; object-fit:contain; background:#fff; border:1px solid #e1dfeb; border-radius:3px; box-shadow:0 3px 9px rgba(31,41,55,.09); }}
+.pub-body {{ min-width:0; }}
+.pub-title {{ margin:0 0 .25rem; font-size:1.08rem; line-height:1.35; }}
+.pub-title a {{ color:#1d1830; }}
+.pub-title a:hover {{ color:#740082; }}
+.pub-authors {{ margin:.15rem 0 .25rem; color:#606071; font-size:.94rem; line-height:1.45; }}
+.pub-authors strong {{ color:#222039; }}
+.pub-links {{ display:flex; gap:1rem; flex-wrap:wrap; font-size:.87rem; }}
+.pub-links .btn {{ color:#740082; text-decoration:underline; text-underline-offset:2px; }}
+.pub-links .btn:hover {{ color:#4c0057; }}
 .contact {{ list-style:none; padding:0; margin:0; color:var(--muted); }}
 footer {{ text-align:center; color:var(--muted); font-size:.82rem; padding:1.6rem 0; }}
-@media (max-width:560px) {{ .pub {{ flex-direction:column; }} .pub-thumb img,.pub-thumb--empty {{ width:100%; height:140px; }} }}
+@media (max-width:560px) {{
+  .pub-intro {{ margin-left:0; }}
+  .pub {{ grid-template-columns:92px minmax(0,1fr); gap:1rem; margin-bottom:1.8rem; }}
+  .pub-side img,.pub-image-link {{ width:92px; }}
+  .pub-side img {{ height:82px; }}
+  .pub-title {{ font-size:1rem; }}
+  .pub-authors {{ font-size:.87rem; }}
+}}
+@media (max-width:360px) {{ .pub {{ grid-template-columns:1fr; }} .pub-side img,.pub-image-link {{ width:140px; }} }}
 </style>
 </head>
 <body>
@@ -184,7 +219,7 @@ def main():
         socials=render_social(prof.get("social", {})),
         bio=bio,
         news=render_news(prof.get("news", [])),
-        pubs="\n".join(render_pub(p) for p in pubs),
+        pubs=render_publications(pubs, prof.get("social", {}).get("Google Scholar", "")),
         contact=contact,
     )
     with open(os.path.join(HERE, "index.html"), "w", encoding="utf-8") as f:

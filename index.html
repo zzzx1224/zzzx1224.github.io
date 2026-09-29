@@ -32,22 +32,36 @@ section h2 { font-size:1.35rem; margin:0 0 1.1rem; color:var(--ink);
 .news { list-style:none; padding:0; margin:0; }
 .news li { padding:.28rem 0; color:var(--ink); }
 .news-date { display:inline-block; min-width:7.5rem; color:var(--muted); font-size:.88rem; }
-.pub { display:flex; gap:1.1rem; padding:1.1rem 0; border-top:1px solid var(--line); }
-.pub:first-of-type { border-top:none; }
-.pub-thumb { flex:0 0 150px; }
-.pub-thumb img { width:150px; height:96px; object-fit:cover; border-radius:6px; border:1px solid var(--line); }
-.pub-thumb--diagram img { object-fit:contain; background:#fff; }
-.pub-thumb--empty { width:150px; height:96px; border:1px dashed var(--line); border-radius:6px; }
-.pub-title { margin:0 0 .25rem; font-size:1.04rem; }
-.pub-authors { margin:.1rem 0; font-size:.92rem; color:var(--ink); }
-.pub-venue { font-size:.9rem; color:var(--muted); }
-.pub-tldr { margin:.45rem 0 .2rem; font-size:.9rem; color:var(--muted); }
-.pub-links { margin-top:.5rem; display:flex; gap:.45rem; flex-wrap:wrap; }
-.btn { font-size:.8rem; padding:.18rem .55rem; border:1px solid var(--accent); border-radius:5px; color:var(--accent); }
-.btn:hover { background:var(--accent); color:#fff; text-decoration:none; }
+#publications { font-family:Georgia,"Times New Roman",serif; }
+#publications > h2 { border:0; padding:0; font-size:2rem; line-height:1.2; letter-spacing:-.02em; }
+.pub-intro { max-width:42rem; margin:.9rem 0 2.2rem 176px; color:#4b5563; font-size:1rem; line-height:1.55; }
+.pub-year-group { margin:0 0 2.3rem; }
+.pub-year { color:#740082; font-size:1.45rem; font-weight:500; margin:0 0 .8rem; }
+.pub { display:grid; grid-template-columns:150px minmax(0,1fr); gap:1.6rem; margin:0 0 2rem; align-items:start; }
+.pub-side { min-width:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }
+.pub-venue { font-size:.78rem; font-weight:600; color:#20253b; line-height:1.35; margin:.1rem 0 .6rem; }
+.pub-image-link { display:block; width:140px; }
+.pub-side img { display:block; width:140px; height:110px; object-fit:contain; background:#fff; border:1px solid #e1dfeb; border-radius:3px; box-shadow:0 3px 9px rgba(31,41,55,.09); }
+.pub-body { min-width:0; }
+.pub-title { margin:0 0 .25rem; font-size:1.08rem; line-height:1.35; }
+.pub-title a { color:#1d1830; }
+.pub-title a:hover { color:#740082; }
+.pub-authors { margin:.15rem 0 .25rem; color:#606071; font-size:.94rem; line-height:1.45; }
+.pub-authors strong { color:#222039; }
+.pub-links { display:flex; gap:1rem; flex-wrap:wrap; font-size:.87rem; }
+.pub-links .btn { color:#740082; text-decoration:underline; text-underline-offset:2px; }
+.pub-links .btn:hover { color:#4c0057; }
 .contact { list-style:none; padding:0; margin:0; color:var(--muted); }
 footer { text-align:center; color:var(--muted); font-size:.82rem; padding:1.6rem 0; }
-@media (max-width:560px) { .pub { flex-direction:column; } .pub-thumb img,.pub-thumb--empty { width:100%; height:140px; } }
+@media (max-width:560px) {
+  .pub-intro { margin-left:0; }
+  .pub { grid-template-columns:92px minmax(0,1fr); gap:1rem; margin-bottom:1.8rem; }
+  .pub-side img,.pub-image-link { width:92px; }
+  .pub-side img { height:82px; }
+  .pub-title { font-size:1rem; }
+  .pub-authors { font-size:.87rem; }
+}
+@media (max-width:360px) { .pub { grid-template-columns:1fr; } .pub-side img,.pub-image-link { width:140px; } }
 </style>
 </head>
 <body>
@@ -72,216 +86,262 @@ footer { text-align:center; color:var(--muted); font-size:.82rem; padding:1.6rem
   </section>
   <section id="publications">
     <h2>Publications</h2>
-    <article class="pub">
-      <div class="pub-thumb pub-thumb--diagram"><img loading="lazy" src="publication_zehao/pacts.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2609.34786" target="_blank" rel="noopener">Instance-Adaptive Prompts as Context for Time-Series Foundation Models</a></h3>
-        <p class="pub-authors"><strong>Zehao Xiao</strong>, Shifeng Xie, Lei Zan, Jianfeng Zhang, Lujia Pan, Ievgen Redko, Malik Tiomoko, Keli Zhang</p>
-        <span class="pub-venue"><em>arXiv preprint</em>, 2026</span>
-        
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2609.34786" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://openreview.net/forum?id=YCedi8zejy" target="_blank" rel="noopener">Workshop version</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb pub-thumb--diagram"><img loading="lazy" src="publication_zehao/tabby.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2609.13956" target="_blank" rel="noopener">Tabby: An Open Pretraining Recipe for Time Series Foundation Models</a></h3>
-        <p class="pub-authors">Shifeng Xie, Bahaeddine Abdessalem, <strong>Zehao Xiao</strong>, Youssef Attia El Hili, Ambroise Odonnat, Zhiwei Dong, Lei Zan, Themis Palpanas, Jianfeng Zhang, Lujia Pan, Keli Zhang, Malik Tiomoko</p>
-        <span class="pub-venue"><em>Preprint (Technical Report)</em>, 2026</span>
-        
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2609.13956" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/huawei-noah/trustworthyAI" target="_blank" rel="noopener">Code</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/natcomm2026_mpts.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2501.11039" target="_blank" rel="noopener">Model Predictive Task Sampling for Efficient and Robust Adaptation</a></h3>
-        <p class="pub-authors">C Wang*, <strong>Zehao Xiao</strong>*, Y Mao*, Y Qu*, Jiayi Shen, Y Lv, X Ji</p>
-        <span class="pub-venue"><em>Nature Communications</em>, 2026</span>
-        
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2501.11039" target="_blank" rel="noopener">Paper</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/icml2026_uniformity.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2602.09507" target="_blank" rel="noopener">Towards Uniformity and Alignment for Multimodal Representation Learning</a></h3>
-        <p class="pub-authors">Wenzhe Yin, Pan Zhou, <strong>Zehao Xiao</strong>, Jie Liu, Shujian Yu, Jan-Jakob Sonke, Efstratios Gavves</p>
-        <span class="pub-venue"><em>ICML</em>, 2026</span>
-        
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2602.09507" target="_blank" rel="noopener">Paper</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/gnp.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2502.02338" target="_blank" rel="noopener">Geometric Neural Process Fields</a></h3>
-        <p class="pub-authors">Wenzhe Yin, <strong>Zehao Xiao</strong>, Jiayi Shen, Yunlu Chen, Cees Snoek, Jan-Jakob Sonke, Efstratios Gavves</p>
-        <span class="pub-venue"><em>TMLR</em>, 2026</span>
-        
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2502.02338" target="_blank" rel="noopener">Paper</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/cs_align.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2502.17028" target="_blank" rel="noopener">Distributional Vision-Language Alignment by Cauchy-Schwarz Divergence</a></h3>
-        <p class="pub-authors">Wenzhe Yin*, <strong>Zehao Xiao</strong>*, Pan Zhou, Shujian Yu, Jiayi Shen, Jan-Jakob Sonke, Efstratios Gavves</p>
-        <span class="pub-venue"><em>ICLR</em>, 2026</span>
-        
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2502.17028" target="_blank" rel="noopener">Paper</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/icml2025_main.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2505.01726" target="_blank" rel="noopener">Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes</a></h3>
-        <p class="pub-authors">Jie Liu, Pan Zhou, <strong>Zehao Xiao</strong>, Jiayi Shen, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves</p>
-        <span class="pub-venue"><em>ICML</em>, 2025</span>
-        
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2505.01726" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://jliu4ai.github.io/NPISeg3D_projectpage/" target="_blank" rel="noopener">Project</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/wacv2025_generalizeformer.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2502.12195" target="_blank" rel="noopener">GeneralizeFormer: Layer-Adaptive Model Generation Across Test-Time Distribution Shifts</a></h3>
-        <p class="pub-authors">Sameer Ambekar, <strong>Zehao Xiao</strong>, Jiayi Shen, Xiantong Zhen, Cees Snoek</p>
-        <span class="pub-venue"><em>WACV</em>, 2025</span>
-        
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2502.12195" target="_blank" rel="noopener">Paper</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/iclr2025_main.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://openreview.net/forum?id=EFZEdHB3Mp" target="_blank" rel="noopener">DynaPrompt: Dynamic Test-Time Prompt Tuning</a></h3>
-        <p class="pub-authors"><strong>Zehao Xiao</strong>, Shilin Yan, Jack Hong, Jiayin Cai, Xiaolong Jiang, Yao Hu, Jiayi Shen, Qi (Cheems) Wang, Cees Snoek</p>
-        <span class="pub-venue"><em>ICLR</em>, 2025</span>
-        
-        <div class="pub-links"><a class="btn" href="https://openreview.net/forum?id=EFZEdHB3Mp" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zzzx1224/DynaPrompt" target="_blank" rel="noopener">Code</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/tta_survey.jpg" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2411.03687" target="_blank" rel="noopener">Beyond Model Adaptation at Test Time: A Survey</a></h3>
-        <p class="pub-authors"><strong>Zehao Xiao</strong>, Cees Snoek</p>
-        <span class="pub-venue"><em>Preprint</em>, 2024</span>
-        
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2411.03687" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zzzx1224/Beyond-model-adaptation-at-test-time-Papers" target="_blank" rel="noopener">PaperList</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/neurips2024_go4align.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2404.06486" target="_blank" rel="noopener">GO4Align: Group Optimization for Multi-Task Alignment</a></h3>
-        <p class="pub-authors">Jiayi Shen, Qi (Cheems) Wang, <strong>Zehao Xiao</strong>*, Nanne van Noord, Marcel Worring</p>
-        <span class="pub-venue"><em>NeurIPS</em>, 2024</span>
-        
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2404.06486" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/autumn9999/GO4Align" target="_blank" rel="noopener">Code</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/collas2024_variational_labels.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2307.04033" target="_blank" rel="noopener">Probabilistic Test-Time Generalization by Variational Neighbor-Labeling</a></h3>
-        <p class="pub-authors">Sameer Ambekar*, <strong>Zehao Xiao</strong>*, Jiayi Shen, Xiantong Zhen, Cees Snoek</p>
-        <span class="pub-venue"><em>CoLLAs</em>, 2024</span>
-        <p class="pub-tldr">Variational neighbor labels with meta-generalization: pseudo labels as latent variables, meta-learned with variational inference and neighboring information for test-time domain generalization.</p>
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2307.04033" target="_blank" rel="noopener">Paper</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/cvpr2024_anyshift.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2402.10099" target="_blank" rel="noopener">Any-Shift Prompting for Generalization over Distributions</a></h3>
-        <p class="pub-authors"><strong>Zehao Xiao</strong>, Jiayi Shen, Mohammad Mahdi Derakhshani, Shengcai Liao, Cees Snoek</p>
-        <span class="pub-venue"><em>CVPR</em>, 2024</span>
-        <p class="pub-tldr">A general probabilistic inference framework that uses both training and test task information for prompt generation, improving generalization across distribution shifts.</p>
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2402.10099" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zzzx1224/any-shift-prompting" target="_blank" rel="noopener">Code</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/neurips2023_protodiff.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2306.14770" target="_blank" rel="noopener">ProtoDiff: Learning to Learn Prototypical Networks by Task-Guided Diffusion</a></h3>
-        <p class="pub-authors">Yingjun Du, <strong>Zehao Xiao</strong>, Shengcai Liao, Cees Snoek</p>
-        <span class="pub-venue"><em>NeurIPS</em>, 2023</span>
-        <p class="pub-tldr">A task-guided diffusion model during meta-training that gradually generates prototypes for efficient class representations.</p>
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2306.14770" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/YDU-uva/ProtoDiff" target="_blank" rel="noopener">Code</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/iclr2023_main.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://openreview.net/forum?id=3dnrKbeVatv" target="_blank" rel="noopener">Energy-Based Test Sample Adaptation for Domain Generalization</a></h3>
-        <p class="pub-authors"><strong>Zehao Xiao</strong>, Xiantong Zhen, Shengcai Liao, Cees Snoek</p>
-        <span class="pub-venue"><em>ICLR</em>, 2023</span>
-        <p class="pub-tldr">A discriminative energy-based model that adapts target samples to the source domain distributions for domain generalization.</p>
-        <div class="pub-links"><a class="btn" href="https://openreview.net/forum?id=3dnrKbeVatv" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zzzx1224/EBTSA-ICLR2023" target="_blank" rel="noopener">Code</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/neurips2022_main.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2210.04637" target="_blank" rel="noopener">Association Graph Learning for Multi-Task Classification with Category Shifts</a></h3>
-        <p class="pub-authors">Jiayi Shen, <strong>Zehao Xiao</strong>, Xiantong Zhen, Cees Snoek, Marcel Worring</p>
-        <span class="pub-venue"><em>NeurIPS</em>, 2022</span>
-        <p class="pub-tldr">A new multi-task learning setting that addresses category shifts from training to test data.</p>
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2210.04637" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/autumn9999/MTC-with-Category-Shifts" target="_blank" rel="noopener">Code</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/iclr2022_main.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2202.08045" target="_blank" rel="noopener">Learning to Generalize across Domains on Single Test Samples</a></h3>
-        <p class="pub-authors"><strong>Zehao Xiao</strong>, Xiantong Zhen, Ling Shao, Cees Snoek</p>
-        <span class="pub-venue"><em>ICLR</em>, 2022</span>
-        <p class="pub-tldr">A meta-learning paradigm that learns to adapt with single samples at training time, then further adapts to each single test sample at test time.</p>
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2202.08045" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zzzx1224/SingleSampleGeneralization-ICLR2022" target="_blank" rel="noopener">Code</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/icml2021_main.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/2105.04030" target="_blank" rel="noopener">A Bit More Bayesian: Domain-Invariant Learning with Uncertainty</a></h3>
-        <p class="pub-authors"><strong>Zehao Xiao</strong>*, Jiayi Shen*, Xiantong Zhen, Ling Shao, Cees Snoek</p>
-        <span class="pub-venue"><em>ICML</em>, 2021</span>
-        <p class="pub-tldr">Introduces weight uncertainty via variational Bayesian inference to better explore domain-invariant learning.</p>
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2105.04030" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zzzx1224/A-Bit-More-Bayesian" target="_blank" rel="noopener">Code</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/iccv2019_main.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Relational_Attention_Network_for_Crowd_Counting_ICCV_2019_paper.html" target="_blank" rel="noopener">Relational Attention Network for Crowd Counting</a></h3>
-        <p class="pub-authors">Anran Zhang, Jiayi Shen, <strong>Zehao Xiao</strong>, Fan Zhu, Xiantong Zhen, Xianbin Cao, Ling Shao</p>
-        <span class="pub-venue"><em>ICCV</em>, 2019</span>
-        <p class="pub-tldr">A self-attention mechanism capturing pixel interdependence for crowd counting and density estimation.</p>
-        <div class="pub-links"><a class="btn" href="https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Relational_Attention_Network_for_Crowd_Counting_ICCV_2019_paper.html" target="_blank" rel="noopener">Paper</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/cvpr2019_main.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://openaccess.thecvf.com/content_CVPR_2019/html/Jiang_Crowd_Counting_and_Density_Estimation_by_Trellis_Encoder-Decoder_Networks_CVPR_2019_paper.html" target="_blank" rel="noopener">Crowd Counting and Density Estimation by Trellis Encoder-Decoder Networks</a></h3>
-        <p class="pub-authors">Xiaolong Jiang*, <strong>Zehao Xiao</strong>*, Baochang Zhang, Xiantong Zhen, Xianbin Cao, David Doermann, Ling Shao</p>
-        <span class="pub-venue"><em>CVPR</em>, 2019</span>
-        <p class="pub-tldr">A trellis encoder-decoder network for crowd counting that generates high-quality density maps.</p>
-        <div class="pub-links"><a class="btn" href="https://openaccess.thecvf.com/content_CVPR_2019/html/Jiang_Crowd_Counting_and_Density_Estimation_by_Trellis_Encoder-Decoder_Networks_CVPR_2019_paper.html" target="_blank" rel="noopener">Paper</a></div>
-      </div>
-    </article>
-    <article class="pub">
-      <div class="pub-thumb"><img loading="lazy" src="publication_zehao/bmvc2018_main.png" alt=""></div>
-      <div class="pub-body">
-        <h3 class="pub-title"><a href="https://arxiv.org/abs/1808.06133" target="_blank" rel="noopener">In Defense of Single-column Networks for Crowd Counting</a></h3>
-        <p class="pub-authors">Z Wang*, <strong>Zehao Xiao</strong>*, K Xie, Q Qiu, Xiantong Zhen, Xianbin Cao</p>
-        <span class="pub-venue"><em>BMVC</em>, 2018</span>
-        
-        <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/1808.06133" target="_blank" rel="noopener">Paper</a></div>
-      </div>
-    </article>
+<p class="pub-intro">Selected publications. For the full list, see my <a href="https://scholar.google.com.hk/citations?user=iteDHOsAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar profile</a>.</p>
+    <div class="pub-year-group">
+      <h3 class="pub-year">2026</h3>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">arXiv preprint</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2609.34786" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/pacts.png" alt="Figure for Instance-Adaptive Prompts as Context for Time-Series Foundation Models"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2609.34786" target="_blank" rel="noopener">Instance-Adaptive Prompts as Context for Time-Series Foundation Models</a></h4>
+          <p class="pub-authors"><strong>Zehao Xiao</strong>, Shifeng Xie, Lei Zan, Jianfeng Zhang, Lujia Pan, Ievgen Redko, Malik Tiomoko, Keli Zhang</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2609.34786" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://openreview.net/forum?id=YCedi8zejy" target="_blank" rel="noopener">Workshop version</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">Preprint (Technical Report)</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2609.13956" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/tabby.png" alt="Figure for Tabby: An Open Pretraining Recipe for Time Series Foundation Models"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2609.13956" target="_blank" rel="noopener">Tabby: An Open Pretraining Recipe for Time Series Foundation Models</a></h4>
+          <p class="pub-authors">Shifeng Xie, Bahaeddine Abdessalem, <strong>Zehao Xiao</strong>, Youssef Attia El Hili, Ambroise Odonnat, Zhiwei Dong, Lei Zan, Themis Palpanas, Jianfeng Zhang, Lujia Pan, Keli Zhang, Malik Tiomoko</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2609.13956" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/huawei-noah/trustworthyAI" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">Nature Communications</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2501.11039" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/natcomm2026_mpts.png" alt="Figure for Model Predictive Task Sampling for Efficient and Robust Adaptation"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2501.11039" target="_blank" rel="noopener">Model Predictive Task Sampling for Efficient and Robust Adaptation</a></h4>
+          <p class="pub-authors">C Wang*, <strong>Zehao Xiao</strong>*, Y Mao*, Y Qu*, Jiayi Shen, Y Lv, X Ji</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2501.11039" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">ICML</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2602.09507" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/icml2026_uniformity.png" alt="Figure for Towards Uniformity and Alignment for Multimodal Representation Learning"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2602.09507" target="_blank" rel="noopener">Towards Uniformity and Alignment for Multimodal Representation Learning</a></h4>
+          <p class="pub-authors">Wenzhe Yin, Pan Zhou, <strong>Zehao Xiao</strong>, Jie Liu, Shujian Yu, Jan-Jakob Sonke, Efstratios Gavves</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2602.09507" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">TMLR</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2502.02338" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/gnp.png" alt="Figure for Geometric Neural Process Fields"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2502.02338" target="_blank" rel="noopener">Geometric Neural Process Fields</a></h4>
+          <p class="pub-authors">Wenzhe Yin, <strong>Zehao Xiao</strong>, Jiayi Shen, Yunlu Chen, Cees Snoek, Jan-Jakob Sonke, Efstratios Gavves</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2502.02338" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">ICLR</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2502.17028" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/cs_align.png" alt="Figure for Distributional Vision-Language Alignment by Cauchy-Schwarz Divergence"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2502.17028" target="_blank" rel="noopener">Distributional Vision-Language Alignment by Cauchy-Schwarz Divergence</a></h4>
+          <p class="pub-authors">Wenzhe Yin*, <strong>Zehao Xiao</strong>*, Pan Zhou, Shujian Yu, Jiayi Shen, Jan-Jakob Sonke, Efstratios Gavves</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2502.17028" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="pub-year-group">
+      <h3 class="pub-year">2025</h3>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">ICML</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2505.01726" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/icml2025_main.png" alt="Figure for Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2505.01726" target="_blank" rel="noopener">Probabilistic Interactive 3D Segmentation with Hierarchical Neural Processes</a></h4>
+          <p class="pub-authors">Jie Liu, Pan Zhou, <strong>Zehao Xiao</strong>, Jiayi Shen, Wenzhe Yin, Jan-Jakob Sonke, Efstratios Gavves</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2505.01726" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://jliu4ai.github.io/NPISeg3D_projectpage/" target="_blank" rel="noopener">Project</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">WACV</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2502.12195" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/wacv2025_generalizeformer.png" alt="Figure for GeneralizeFormer: Layer-Adaptive Model Generation Across Test-Time Distribution Shifts"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2502.12195" target="_blank" rel="noopener">GeneralizeFormer: Layer-Adaptive Model Generation Across Test-Time Distribution Shifts</a></h4>
+          <p class="pub-authors">Sameer Ambekar, <strong>Zehao Xiao</strong>, Jiayi Shen, Xiantong Zhen, Cees Snoek</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2502.12195" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">ICLR</div>
+          <a class="pub-image-link" href="https://openreview.net/forum?id=EFZEdHB3Mp" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/iclr2025_main.png" alt="Figure for DynaPrompt: Dynamic Test-Time Prompt Tuning"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://openreview.net/forum?id=EFZEdHB3Mp" target="_blank" rel="noopener">DynaPrompt: Dynamic Test-Time Prompt Tuning</a></h4>
+          <p class="pub-authors"><strong>Zehao Xiao</strong>, Shilin Yan, Jack Hong, Jiayin Cai, Xiaolong Jiang, Yao Hu, Jiayi Shen, Qi (Cheems) Wang, Cees Snoek</p>
+          <div class="pub-links"><a class="btn" href="https://openreview.net/forum?id=EFZEdHB3Mp" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zzzx1224/DynaPrompt" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="pub-year-group">
+      <h3 class="pub-year">2024</h3>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">Preprint</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2411.03687" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/tta_survey.jpg" alt="Figure for Beyond Model Adaptation at Test Time: A Survey"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2411.03687" target="_blank" rel="noopener">Beyond Model Adaptation at Test Time: A Survey</a></h4>
+          <p class="pub-authors"><strong>Zehao Xiao</strong>, Cees Snoek</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2411.03687" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zzzx1224/Beyond-model-adaptation-at-test-time-Papers" target="_blank" rel="noopener">PaperList</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">NeurIPS</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2404.06486" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/neurips2024_go4align.png" alt="Figure for GO4Align: Group Optimization for Multi-Task Alignment"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2404.06486" target="_blank" rel="noopener">GO4Align: Group Optimization for Multi-Task Alignment</a></h4>
+          <p class="pub-authors">Jiayi Shen, Qi (Cheems) Wang, <strong>Zehao Xiao</strong>*, Nanne van Noord, Marcel Worring</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2404.06486" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/autumn9999/GO4Align" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">CoLLAs</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2307.04033" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/collas2024_variational_labels.png" alt="Figure for Probabilistic Test-Time Generalization by Variational Neighbor-Labeling"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2307.04033" target="_blank" rel="noopener">Probabilistic Test-Time Generalization by Variational Neighbor-Labeling</a></h4>
+          <p class="pub-authors">Sameer Ambekar*, <strong>Zehao Xiao</strong>*, Jiayi Shen, Xiantong Zhen, Cees Snoek</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2307.04033" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">CVPR</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2402.10099" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/cvpr2024_anyshift.png" alt="Figure for Any-Shift Prompting for Generalization over Distributions"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2402.10099" target="_blank" rel="noopener">Any-Shift Prompting for Generalization over Distributions</a></h4>
+          <p class="pub-authors"><strong>Zehao Xiao</strong>, Jiayi Shen, Mohammad Mahdi Derakhshani, Shengcai Liao, Cees Snoek</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2402.10099" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zzzx1224/any-shift-prompting" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="pub-year-group">
+      <h3 class="pub-year">2023</h3>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">NeurIPS</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2306.14770" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/neurips2023_protodiff.png" alt="Figure for ProtoDiff: Learning to Learn Prototypical Networks by Task-Guided Diffusion"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2306.14770" target="_blank" rel="noopener">ProtoDiff: Learning to Learn Prototypical Networks by Task-Guided Diffusion</a></h4>
+          <p class="pub-authors">Yingjun Du, <strong>Zehao Xiao</strong>, Shengcai Liao, Cees Snoek</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2306.14770" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/YDU-uva/ProtoDiff" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">ICLR</div>
+          <a class="pub-image-link" href="https://openreview.net/forum?id=3dnrKbeVatv" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/iclr2023_main.png" alt="Figure for Energy-Based Test Sample Adaptation for Domain Generalization"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://openreview.net/forum?id=3dnrKbeVatv" target="_blank" rel="noopener">Energy-Based Test Sample Adaptation for Domain Generalization</a></h4>
+          <p class="pub-authors"><strong>Zehao Xiao</strong>, Xiantong Zhen, Shengcai Liao, Cees Snoek</p>
+          <div class="pub-links"><a class="btn" href="https://openreview.net/forum?id=3dnrKbeVatv" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zzzx1224/EBTSA-ICLR2023" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="pub-year-group">
+      <h3 class="pub-year">2022</h3>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">NeurIPS</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2210.04637" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/neurips2022_main.png" alt="Figure for Association Graph Learning for Multi-Task Classification with Category Shifts"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2210.04637" target="_blank" rel="noopener">Association Graph Learning for Multi-Task Classification with Category Shifts</a></h4>
+          <p class="pub-authors">Jiayi Shen, <strong>Zehao Xiao</strong>, Xiantong Zhen, Cees Snoek, Marcel Worring</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2210.04637" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/autumn9999/MTC-with-Category-Shifts" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">ICLR</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2202.08045" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/iclr2022_main.png" alt="Figure for Learning to Generalize across Domains on Single Test Samples"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2202.08045" target="_blank" rel="noopener">Learning to Generalize across Domains on Single Test Samples</a></h4>
+          <p class="pub-authors"><strong>Zehao Xiao</strong>, Xiantong Zhen, Ling Shao, Cees Snoek</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2202.08045" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zzzx1224/SingleSampleGeneralization-ICLR2022" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="pub-year-group">
+      <h3 class="pub-year">2021</h3>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">ICML</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/2105.04030" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/icml2021_main.png" alt="Figure for A Bit More Bayesian: Domain-Invariant Learning with Uncertainty"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/2105.04030" target="_blank" rel="noopener">A Bit More Bayesian: Domain-Invariant Learning with Uncertainty</a></h4>
+          <p class="pub-authors"><strong>Zehao Xiao</strong>*, Jiayi Shen*, Xiantong Zhen, Ling Shao, Cees Snoek</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/2105.04030" target="_blank" rel="noopener">Paper</a><a class="btn" href="https://github.com/zzzx1224/A-Bit-More-Bayesian" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="pub-year-group">
+      <h3 class="pub-year">2019</h3>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">ICCV</div>
+          <a class="pub-image-link" href="https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Relational_Attention_Network_for_Crowd_Counting_ICCV_2019_paper.html" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/iccv2019_main.png" alt="Figure for Relational Attention Network for Crowd Counting"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Relational_Attention_Network_for_Crowd_Counting_ICCV_2019_paper.html" target="_blank" rel="noopener">Relational Attention Network for Crowd Counting</a></h4>
+          <p class="pub-authors">Anran Zhang, Jiayi Shen, <strong>Zehao Xiao</strong>, Fan Zhu, Xiantong Zhen, Xianbin Cao, Ling Shao</p>
+          <div class="pub-links"><a class="btn" href="https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Relational_Attention_Network_for_Crowd_Counting_ICCV_2019_paper.html" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">CVPR</div>
+          <a class="pub-image-link" href="https://openaccess.thecvf.com/content_CVPR_2019/html/Jiang_Crowd_Counting_and_Density_Estimation_by_Trellis_Encoder-Decoder_Networks_CVPR_2019_paper.html" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/cvpr2019_main.png" alt="Figure for Crowd Counting and Density Estimation by Trellis Encoder-Decoder Networks"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://openaccess.thecvf.com/content_CVPR_2019/html/Jiang_Crowd_Counting_and_Density_Estimation_by_Trellis_Encoder-Decoder_Networks_CVPR_2019_paper.html" target="_blank" rel="noopener">Crowd Counting and Density Estimation by Trellis Encoder-Decoder Networks</a></h4>
+          <p class="pub-authors">Xiaolong Jiang*, <strong>Zehao Xiao</strong>*, Baochang Zhang, Xiantong Zhen, Xianbin Cao, David Doermann, Ling Shao</p>
+          <div class="pub-links"><a class="btn" href="https://openaccess.thecvf.com/content_CVPR_2019/html/Jiang_Crowd_Counting_and_Density_Estimation_by_Trellis_Encoder-Decoder_Networks_CVPR_2019_paper.html" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="pub-year-group">
+      <h3 class="pub-year">2018</h3>
+      <article class="pub">
+        <div class="pub-side">
+          <div class="pub-venue">BMVC</div>
+          <a class="pub-image-link" href="https://arxiv.org/abs/1808.06133" target="_blank" rel="noopener"><img loading="lazy" src="publication_zehao/bmvc2018_main.png" alt="Figure for In Defense of Single-column Networks for Crowd Counting"></a>
+        </div>
+        <div class="pub-body">
+          <h4 class="pub-title"><a href="https://arxiv.org/abs/1808.06133" target="_blank" rel="noopener">In Defense of Single-column Networks for Crowd Counting</a></h4>
+          <p class="pub-authors">Z Wang*, <strong>Zehao Xiao</strong>*, K Xie, Q Qiu, Xiantong Zhen, Xianbin Cao</p>
+          <div class="pub-links"><a class="btn" href="https://arxiv.org/abs/1808.06133" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+      </article>
+    </div>
   </section>
   <section id="contact">
     <h2>Contact</h2>
